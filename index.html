@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>婚前對話手冊</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap">
+<style>
+:root{
+  --paper:#E9ECEF; --sheet:#FBFCFD; --sheet2:#F2F5F7;
+  --ink:#1E2A33; --ink-soft:#56646F; --ink-faint:#8A97A1;
+  --rule:#D5DCE2; --rule-soft:#E6EBEF;
+  --a:#2F6B5C; --b:#6E5389; --red:#9E3346; --red-bg:#F6E9EB;
+  --focus:#2F6B5C;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#151A1F; --sheet:#1D242B; --sheet2:#232B33;
+    --ink:#E4EAEF; --ink-soft:#A6B3BD; --ink-faint:#76838D;
+    --rule:#333D46; --rule-soft:#2A333B;
+    --a:#7FBFAB; --b:#B49BD0; --red:#E48A99; --red-bg:#3A2429;
+    --focus:#7FBFAB;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151A1F; --sheet:#1D242B; --sheet2:#232B33;
+  --ink:#E4EAEF; --ink-soft:#A6B3BD; --ink-faint:#76838D;
+  --rule:#333D46; --rule-soft:#2A333B;
+  --a:#7FBFAB; --b:#B49BD0; --red:#E48A99; --red-bg:#3A2429;
+  --focus:#7FBFAB;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+  font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Noto Serif TC','Songti TC','PMingLiU','Source Han Serif TC',Georgia,serif;font-weight:700;line-height:1.45;margin:0}
+p{margin:0}
+button{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 120px;display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:0;padding:0 16px 140px}}
+
+.mast{grid-column:1/-1;padding:52px 0 26px;border-bottom:1px solid var(--rule)}
+.mast h1{font-size:clamp(30px,5.4vw,44px);letter-spacing:.02em}
+.mast p.sub{color:var(--ink-soft);margin-top:12px;max-width:54ch;font-size:15px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.namefield{display:flex;align-items:center;gap:8px;background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:5px 14px 5px 10px}
+.dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto;background:var(--a)}
+.dot.b{background:var(--b)}
+.namefield input{border:0;background:transparent;color:var(--ink);font:inherit;font-size:15px;width:140px;padding:2px 0}
+.namefield input:focus{outline:none}
+.saveflag{font-size:13px;color:var(--ink-faint);flex:1 1 240px;min-width:0}
+.row .btn{padding:7px 14px;font-size:14px;white-space:nowrap}
+.peer{font-size:13px;color:var(--ink-faint)}
+
+nav{position:sticky;top:calc(14px + env(safe-area-inset-top,0px));padding-top:30px}
+@media (max-width:860px){
+  nav{position:static;padding:18px 0 4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .steplist{display:flex;gap:8px;min-width:max-content}
+}
+.steplist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.steplist button{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;background:none;border:0;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:14.5px;color:var(--ink-soft);white-space:nowrap}
+.steplist button:hover{background:var(--sheet2)}
+.steplist button[aria-current="true"]{background:var(--sheet);color:var(--ink);font-weight:700;box-shadow:inset 2px 0 0 var(--a)}
+@media (max-width:860px){.steplist button[aria-current="true"]{box-shadow:inset 0 -2px 0 var(--a)}}
+.stepno{font-variant-numeric:tabular-nums;color:var(--ink-faint);font-size:12.5px;flex:0 0 auto}
+.tick{color:var(--a);font-size:12.5px}
+
+main{padding-top:30px;min-width:0}
+.eyebrow{font-size:13.5px;color:var(--ink-faint);margin-bottom:10px}
+h2{font-size:clamp(23px,3.6vw,31px);max-width:24ch}
+.lede{color:var(--ink-soft);margin-top:14px;max-width:60ch;font-size:15.5px}
+.block{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:20px 22px;margin-top:16px}
+.block h3{font-size:18px;margin-bottom:6px}
+.block .hint{color:var(--ink-soft);font-size:14.5px;line-height:1.7}
+.rulecard{border-left:3px solid var(--a)}
+.rulecard.two{border-left-color:var(--b)}
+.rulecard.three{border-left-color:var(--ink-faint)}
+
+.q{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:20px 22px;margin-top:14px}
+.qhead{display:flex;gap:12px;align-items:baseline}
+.qnum{font-variant-numeric:tabular-nums;color:var(--ink-faint);font-size:14px;flex:0 0 auto;padding-top:2px}
+.qtext{font-size:17px;font-weight:500;line-height:1.6}
+.qfmt{color:var(--ink-faint);font-size:13.5px;margin-top:4px}
+textarea,input[type=text]{width:100%;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:7px;padding:9px 11px;font:inherit;font-size:15px;resize:vertical;line-height:1.7}
+textarea{min-height:62px}
+textarea:focus,input[type=text]:focus{outline:2px solid var(--focus);border-color:transparent}
+.qbody{margin-top:14px}
+.marks{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.mark{border:1px solid var(--rule);background:transparent;border-radius:999px;padding:3px 11px;font-size:13px;cursor:pointer;color:var(--ink-soft)}
+.mark[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mark.red[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+
+.cmp{border:1px solid var(--rule);border-radius:12px;background:var(--sheet);padding:18px 20px;margin-top:14px}
+.cmp.flag{border-color:var(--red);background:var(--red-bg)}
+.cmpq{font-size:16px;font-weight:500}
+.chip{display:inline-block;font-size:12.5px;border-radius:999px;padding:2px 10px;border:1px solid var(--rule);color:var(--ink-soft);margin-top:8px}
+.chip.flag{background:var(--red);border-color:var(--red);color:#fff}
+.ans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media (max-width:620px){.ans{grid-template-columns:1fr}}
+.ans div{font-size:14.5px;color:var(--ink-soft);background:var(--sheet2);border-radius:8px;padding:10px 12px}
+.who{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-faint);margin-bottom:5px}
+.empty{color:var(--ink-faint);font-size:15px;padding:18px 2px;line-height:1.8}
+
+.topic{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;margin-top:14px}
+.topic.done{border-color:var(--a)}
+.trow{display:flex;gap:12px;align-items:flex-start}
+.tcheck{flex:0 0 auto;width:22px;height:22px;border-radius:6px;border:1.5px solid var(--rule);background:transparent;cursor:pointer;margin-top:3px;display:flex;align-items:center;justify-content:center;font-size:13px;color:transparent;padding:0}
+.tcheck[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:#fff}
+.topic h3{font-size:17.5px}
+.topic .hint{color:var(--ink-soft);font-size:14.5px;margin-top:6px;line-height:1.72}
+.notewrap{margin-top:12px;margin-left:34px}
+@media (max-width:620px){.notewrap{margin-left:0}}
+.peernote{margin-top:10px;margin-left:34px;font-size:14px;color:var(--ink-soft);background:var(--sheet2);border-radius:8px;padding:9px 12px}
+@media (max-width:620px){.peernote{margin-left:0}}
+
+.checks{border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin-top:16px;background:var(--sheet)}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.chk:last-child{border-bottom:0}
+.chk span{font-size:15.5px;line-height:1.6}
+.chk small{display:block;color:var(--ink-faint);font-size:13.5px;line-height:1.6}
+.groupcap{font-size:13.5px;color:var(--ink-faint);padding:14px 18px 6px;border-bottom:1px solid var(--rule-soft);background:var(--sheet2)}
+
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--rule);border-radius:12px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+th{font-weight:700;background:var(--sheet2);font-size:14px}
+tr:last-child td{border-bottom:0}
+td.yes{color:var(--a);font-weight:500}
+td.no{color:var(--ink-faint)}
+td.maybe{color:var(--red)}
+
+.pager{display:flex;gap:10px;margin-top:34px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--rule);background:var(--sheet);border-radius:9px;padding:10px 18px;font-size:15px;cursor:pointer}
+.btn:hover{background:var(--sheet2)}
+.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn:disabled{opacity:.4;cursor:default}
+.progress{margin-left:auto;font-size:13.5px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.banner{background:var(--sheet);border:1px solid var(--a);border-radius:12px;padding:20px 22px;margin-bottom:22px}
+.banner h3{font-size:18px;margin-bottom:6px}
+.banner.warnbox{border-color:var(--red)}
+.banner .hint{color:var(--ink-soft);font-size:14.5px;line-height:1.7}
+.banner .warn{color:var(--red);font-size:14.5px;line-height:1.7;margin-top:6px}
+.bannerbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.bannerbtns .btn{padding:8px 15px;font-size:14.5px}
+.note{font-size:13.5px;color:var(--ink-faint);margin-top:26px;line-height:1.7;max-width:62ch}
+.stat{font-size:15px;color:var(--ink-soft);margin-top:14px}
+.big{font-family:'Noto Serif TC','Songti TC','PMingLiU',serif;font-size:clamp(22px,3.6vw,28px);line-height:1.65;max-width:26ch;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <h1>婚前對話手冊</h1>
+    <p class="sub">一人一份，各自填。填完匯出一個檔案傳給對方，對方匯入就能比對。不需要登入，也不用連任何服務。</p>
+    <div class="row">
+      <label class="namefield"><span class="dot"></span><input type="text" id="nameField" placeholder="你的暱稱" aria-label="你的暱稱"></label>
+      <span class="peer" id="peerinfo"></span>
+    </div>
+    <div class="row">
+      <button class="btn" type="button" id="btnExport">匯出我的答案（檔案）</button>
+      <button class="btn" type="button" id="btnImport">匯入檔案（自己的進度或對方的答案）</button>
+      <button class="btn" type="button" id="btnReadable">匯出可讀版本</button>
+      <input type="file" id="fileIn" accept=".json,application/json,text/plain" style="display:none">
+    </div>
+    <div class="row"><span class="saveflag" id="saveflag"></span></div>
+  </header>
+
+  <nav aria-label="步驟"><ul class="steplist" id="steplist"></ul></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+const QUESTIONS = [
+  ["婚後採用哪一種財產制？法定、分別，還是共同？","三選一"],
+  ["每月孝親費，給你爸媽多少、給對方爸媽多少？","寫金額"],
+  ["目前負債總額多少？含房貸、信貸、卡債、當保證人","寫金額"],
+  ["想生幾個？最晚幾歲前生？如果不孕，怎麼辦？","數字加選項"],
+  ["婚後會跟任何一方爸媽同住嗎？最長住多久？","是或否，加年數"],
+  ["單筆花多少錢以上，需要先告訴對方？","寫金額"],
+  ["如果對方失業，你最多可以無條件撐他幾個月？","寫月數"],
+  ["孩子從父姓還是母姓？","二選一"],
+  ["如果你失能了，希望由誰替你做決定？","寫名字"],
+  ["買房頭期款各出多少？房子登記在誰名下？","金額加名字"],
+  ["如果一方創業，家裡最多能投多少？虧到多少收手？","兩個金額"],
+  ["你的收入裡，多少比例想完全自己決定怎麼花？","寫百分比"]
+];
+
+const TOPICS = {
+  lv1:[
+    ["家務用時間分，不要用項目分","倒垃圾三分鐘、洗全家的衣服一小時，寫成項目看起來公平，做起來不是。雙薪的話，目標比例是多少？"],
+    ["哪些事可以一個人決定","換工作、買車、搬家、辭職休息一年——哪些要一起決定，哪些是對方的自由，先劃出來。"],
+    ["吵架有沒有規則","可以冷靜，但最多冷靜多久？約好冷靜期結束一定要回來談，不要讓冷戰變成默認狀態。"],
+    ["住在哪裡","以誰的工作地為主？通勤成本誰承擔？將來有需要，誰比較可能換工作配合？"]
+  ],
+  lv2:[
+    ["家用怎麼出","全部共同、按收入比例提撥，或各付各的？沒有約定的話，民法規定依經濟能力分擔，法院的認定未必跟你想的一樣。"],
+    ["自由處分金","民法允許約定一筆可以自己花、不用交代的錢。全職照顧家庭的一方特別需要，記得寫進去。"],
+    ["婚前的錢，婚前先拍照","婚前存款、股票、房子，結婚前留一份對帳單並註明日期。事後沒有人有辦法還原。"],
+    ["約定財產制要去登記","只有口頭說好，法律上等於沒說。要書面，還要向法院登記，才能對抗第三人。"]
+  ],
+  lv3:[
+    ["孝親費的上限與調整","兩邊對不對等？如果爸媽生病或失能，金額怎麼調？誰出錢、誰出力，分開討論。"],
+    ["界線由自己人去守","爸媽對育兒、裝潢、花錢有意見時，由他們自己的孩子出面。讓媳婦或女婿去講，是最傷的安排。"],
+    ["過年和節日","輪流還是固定？先訂規則，就不必每年重吵一次同一件事。"],
+    ["家人開口借錢","多少金額以上需要兩人同意？是借還是給？借就寫借據，不要靠記憶。"]
+  ],
+  lv4:[
+    ["誰是主要照顧者","如果需要有人減班、留職停薪或轉兼職，是誰？被犧牲掉的那份收入與職涯，另一方怎麼補？"],
+    ["姓氏有時間限制","出生登記前要以書面約定從父姓或母姓；沒約定或談不攏，戶政事務所會抽籤決定。"],
+    ["如果生不出來","做到試管為止、領養，還是接受不生？台灣代孕目前並未合法，如果那是你的備案，備案等於不存在。"],
+    ["怎麼教","能不能打、3C 怎麼管、讀公立還是私立、補習預算多少。這四件事在孩子出生後會天天發生。"]
+  ],
+  lv5:[
+    ["一方欠了一大筆錢","法定財產制下各自還各自的債，但只要當了保證人或共同簽名就會被拖下水。約好：不互相作保，借錢超過一定金額要說。"],
+    ["懷疑對方外遇","先約好怎麼查、什麼算違約。通姦已除罪，現在只剩民事賠償；忠誠協議的違約金效力有爭議，金額太高法院可能會減。"],
+    ["一方重病或失能","誰替你做醫療決定？收入斷了房貸怎麼辦？照顧的人可以喊累到什麼程度、誰來接手？"],
+    ["孩子有重度身心障礙","誰辭職照顧？長照費用與信託怎麼安排？如果其中一方撐不住，退場的條件是什麼？"],
+    ["一方先走了","保險受益人是誰、遺囑怎麼寫、對方父母的扶養由誰接、房子怎麼處理。"]
+  ],
+  legal:[
+    ["意定監護契約","不先預立，將來失能時由法院指定監護人，順位不一定是配偶。要辦公證才生效。"],
+    ["遺囑與特留分","配偶與子女有特留分，遺囑不能完全剝奪。要做特別安排，先把特留分算出來。"],
+    ["剩餘財產分配的期限","知道差額起兩年、關係消滅起五年內要請求。一方脫產可以主張追加計算。"],
+    ["保單與受益人","壽險、失能扶助、重大傷病各一份清單。受益人欄位是最常忘記更新的一格。"]
+  ]
+};
+
+const CHECKS = [
+  ["g","錢與紀錄"],
+  ["c1","聯徵中心個人信用報告","兩個人互相交換，含負債、遲繳與保證人身分"],
+  ["c2","國稅局財產與所得清單","核對跟口頭講的是否一致"],
+  ["c3","警察刑事紀錄證明","也就是良民證"],
+  ["c4","司法院裁判書查詢","有沒有民事訴訟、強制執行紀錄"],
+  ["c5","是否為公司負責人、有無連帶保證","這會穿透到家庭資產"],
+  ["g","身體與家庭"],
+  ["c6","戶籍謄本，含詳細記事","確認有沒有前婚或非婚生子女"],
+  ["c7","婚前健康檢查與帶因篩檢","例如海洋性貧血、脊髓性肌肉萎縮症"],
+  ["c8","長期用藥與身心病史，互相說明","隱瞞比病本身傷人"],
+  ["c9","雙方父母的財務與退休狀況","將來會不會變成我們的負擔"],
+  ["c10","保單清單與受益人","結婚後記得去變更"]
+];
+
+const BINDING = [
+  ["約定財產制","有","書面，並向法院登記","yes"],
+  ["自由處分金","有","書面約定","yes"],
+  ["意定監護","有","辦理公證","yes"],
+  ["遺囑、保單受益人","有","依法定方式，並向保險公司變更","yes"],
+  ["子女監護與探視","沒有","法院以孩子最佳利益判斷","no"],
+  ["忠誠協議的違約金","有爭議","金額過高可能被減，請律師擬","maybe"],
+  ["孝親費、家務分工、生育計畫","沒有","寫成備忘錄，靠定期回顧維持","no"]
+];
+
+const REVIEW_TRIGGERS = ["換工作、失業或創業","懷孕、生產、孩子換學制","任一方父母重病或失能","買房、大額借貸或繼承","任一方年收入變動超過三成"];
+const MARKS = ["紅線","可以談","都可以"];
+const TOPIC_TITLES = {lv1:"每天的日子",lv2:"錢",lv3:"兩邊的家",lv4:"孩子",lv5:"萬一",legal:"要去辦的文件"};
+
+const STEPS = [
+  {id:"intro",  nav:"開始之前", title:"為什麼要先談", kind:"intro"},
+  {id:"quiz",   nav:"我的答案", title:"先不要討論，自己寫下答案", kind:"quiz"},
+  {id:"compare",nav:"攤開比對", title:"把對方那一份讀進來比對", kind:"compare"},
+  {id:"lv1",    nav:"每天的日子", title:"從最小、最不傷感情的開始", kind:"topics", key:"lv1", eyebrow:"第一層"},
+  {id:"lv2",    nav:"錢",       title:"不是誰賺得多，是誰說了算", kind:"topics", key:"lv2", eyebrow:"第二層"},
+  {id:"lv3",    nav:"兩邊的家", title:"誰的爸媽，誰去講", kind:"topics", key:"lv3", eyebrow:"第三層"},
+  {id:"lv4",    nav:"孩子",     title:"生不生，以及生了之後誰的人生會變", kind:"topics", key:"lv4", eyebrow:"第四層"},
+  {id:"lv5",    nav:"萬一",     title:"這一層請誠實，不要講理想中的自己", kind:"topics", key:"lv5", eyebrow:"第五層"},
+  {id:"legal",  nav:"要去辦的",  title:"談好了，還要真的去辦才算數", kind:"legal"},
+  {id:"check",  nav:"一起確認", title:"登記結婚前，兩個人一起做", kind:"checks"},
+  {id:"after",  nav:"談完之後", title:"每年回來看一次，十五分鐘就夠", kind:"after"}
+];
+
+/* ---------- state ---------- */
+const LS_KEY = "premarital-worksheet-v2";
+const LS_PEER = "premarital-peer-v2";
+const PREFIX = "婚前對話手冊";
+
+let state = {name:"", q:{}, topics:{}, checks:{}};
+let peer = null;            // {name, q, topics, savedAt, title}
+let saveTimer = null, current = 0, storageOK = true;
+
+function blankQ(i){ return state.q["q"+i] || (state.q["q"+i] = {ans:"",mark:""}); }
+function blankT(k){ return state.topics[k] || (state.topics[k] = {done:false,note:""}); }
+function myName(){ return (state.name || "").trim() || "我"; }
+function peerName(){ return (peer && peer.name) || "對方"; }
+function flag(msg){ const el = document.getElementById("saveflag"); if(el) el.textContent = msg; }
+
+function checkStorage(){
+  try{ localStorage.setItem("__t","1"); localStorage.removeItem("__t"); storageOK = true; }
+  catch(e){ storageOK = false; }
+}
+
+function loadLocal(){
+  try{
+    const raw = localStorage.getItem(LS_KEY);
+    if(raw) Object.assign(state, JSON.parse(raw));
+  }catch(e){}
+  // migrate the old two-column shape
+  Object.keys(state.q || {}).forEach(k=>{
+    const d = state.q[k];
+    if(d && d.ans === undefined && (d.a !== undefined || d.ma !== undefined)){
+      state.q[k] = {ans: d.a || "", mark: d.ma || ""};
+    }
+  });
+  try{ const p = localStorage.getItem(LS_PEER); if(p) peer = JSON.parse(p); }catch(e){}
+}
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }, 500);
+}
+function setPeer(p){
+  peer = p;
+  try{ p ? localStorage.setItem(LS_PEER, JSON.stringify(p)) : localStorage.removeItem(LS_PEER); }catch(e){}
+}
+
+/* ---------- 檔案匯出與匯入 ---------- */
+function stamp(){
+  const d = new Date(), p = n=>String(n).padStart(2,"0");
+  return d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+"-"+p(d.getHours())+p(d.getMinutes());
+}
+function safeName(s){ return String(s||"").replace(/['"\\\/]/g,"").trim().slice(0,24); }
+
+function payload(){
+  return JSON.stringify({schema:"premarital-worksheet-v2", owner:safeName(state.name)||"未命名",
+    savedAt:new Date().toISOString(), q:state.q, topics:state.topics, checks:state.checks}, null, 2);
+}
+
+function deliver(filename, data, mime){
+  try{
+    const blob = new Blob([data], {type: mime || "application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 1000);
+    return true;
+  }catch(e){}
+  try{
+    const w = window.open("", "_blank");
+    if(w){ w.document.title = filename; w.document.body.style.whiteSpace = "pre-wrap";
+      w.document.body.textContent = data; return true; }
+  }catch(e){}
+  try{ navigator.clipboard.writeText(data); flag("這台瀏覽器不能直接存檔，內容已複製到剪貼簿，貼到記事本存成檔案即可。"); return true; }
+  catch(e){ flag("這台瀏覽器不能存檔也不能複製，請改用電腦開啟。"); return false; }
+}
+
+function exportData(){
+  const nick = safeName(state.name);
+  if(!nick){ flag("先在上面填一個暱稱，檔名會用它來分辨是誰寫的。"); return; }
+  const ok = deliver(PREFIX+"-"+nick+"-"+stamp()+".json", payload(), "application/json");
+  if(ok) flag("已匯出。把這個檔案傳給對方，他按「匯入檔案」就看得到你的答案。");
+}
+
+let pending = null;
+
+function filledCount(q){ let n=0; for(const k in (q||{})) if(q[k] && q[k].ans) n++; return n; }
+
+function resumeMine(d){
+  state.q = d.q || {}; state.topics = d.topics || {}; state.checks = d.checks || {};
+  const owner = safeName(d.owner);
+  if(owner) state.name = owner;
+  pending = null; save();
+  flag("已接回「"+(state.name||"這一份")+"」的進度，可以從上次的地方繼續填。");
+  current = 1; render();
+}
+
+function takeAsPeer(d, owner, label){
+  setPeer({name:owner, q:d.q||{}, topics:d.topics||{}, savedAt:d.savedAt||"", title:label||""});
+  pending = null;
+  flag("已讀進 "+owner+" 的答案，可以到「攤開比對」看兩邊的差異。");
+  current = 2; render();
+}
+
+function applyImported(d, label){
+  if(!d || d.schema !== "premarital-worksheet-v2"){ flag("這個檔案看起來不是這份手冊匯出的。"); return; }
+  const owner = safeName(d.owner) || "未命名";
+  const mine = safeName(state.name);
+  if(mine && owner === mine){ resumeMine(d); return; }   // 同一個暱稱，一定是自己的備份
+  pending = {d, owner, label};                            // 其餘情況讓使用者自己說是哪一種
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function pendingBanner(){
+  if(!pending) return null;
+  const d = pending.d, owner = pending.owner;
+  const when = d.savedAt ? String(d.savedAt).slice(0,16).replace("T"," ") : "";
+  const n = filledCount(d.q);
+  const haveMine = filledCount(state.q);
+  return h("div",{class:"banner"},
+    h("h3",{},"這個檔案是誰的？"),
+    h("p",{class:"hint"}, "檔案裡的暱稱是「"+owner+"」，填了 "+n+" 題"+(when?("，存檔時間 "+when):"")+"。"),
+    haveMine ? h("p",{class:"warn"}, "注意：選「我的進度」會蓋掉你現在已經填的 "+haveMine+" 題。") : null,
+    h("div",{class:"bannerbtns"},
+      h("button",{class:"btn primary",type:"button",onclick:()=>resumeMine(d)},"這是我的進度，繼續填"),
+      h("button",{class:"btn",type:"button",onclick:()=>takeAsPeer(d, owner, pending.label)},"這是對方的答案，拿來比對"),
+      h("button",{class:"btn",type:"button",onclick:()=>{ pending=null; flag("已取消這次匯入。"); render(); }},"取消")
+    )
+  );
+}
+
+function importFile(file){
+  if(!file) return;
+  const r = new FileReader();
+  r.onload = ()=>{
+    try{ applyImported(JSON.parse(String(r.result)), file.name); }
+    catch(e){ flag("讀不懂這個檔案，請確認是匯出的 .json 檔。"); }
+  };
+  r.onerror = ()=>flag("檔案讀取失敗，請再試一次。");
+  r.readAsText(file, "utf-8");
+}
+
+/* ---------- helpers ---------- */
+const h = (tag, attrs={}, ...kids)=>{
+  const el = document.createElement(tag);
+  for(const [k,v] of Object.entries(attrs)){
+    if(k==="class") el.className=v;
+    else if(k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if(v!==null&&v!==undefined) el.setAttribute(k,v);
+  }
+  kids.flat().forEach(c=>{ if(c===null||c===undefined||c===false) return;
+    el.appendChild(typeof c==="string"?document.createTextNode(c):c); });
+  return el;
+};
+function field(value, placeholder, onInput){
+  const t = h("textarea",{placeholder, rows:"2"});
+  t.value = value || "";
+  t.addEventListener("input", ()=>{ onInput(t.value); save(); });
+  return t;
+}
+function markRow(getVal, setVal){
+  const row = h("div",{class:"marks"});
+  MARKS.forEach(m=>{
+    row.appendChild(h("button",{class:"mark"+(m==="紅線"?" red":""), type:"button",
+      "aria-pressed": String(getVal()===m),
+      onclick:()=>{ setVal(getVal()===m?"":m); save(); render(); }}, m));
+  });
+  return row;
+}
+
+/* ---------- panels ---------- */
+function panelIntro(){
+  const rules = [
+    ["不用「你是不是不愛我」來回應問題","對方問錢、問爸媽、問萬一，是在認真準備一起生活，不是在懷疑感情。",""],
+    ["不要為了讓對話結束，答應自己做不到的事","現在說都可以，三年後會變成你當初明明說可以。說真話比較省力。","two"],
+    ["卡住就先停，不是輸了","同一題卡住兩次就休息，各自寫下我最低可以接受什麼、為什麼，下次再談。","three"]
+  ];
+  return [
+    h("p",{class:"big"},"大部分的婚姻不是敗在感情消失，而是敗在「我以為你也是這樣想的」。"),
+    h("p",{class:"lede"},"錢怎麼花、孩子怎麼教、爸媽的話要聽幾分、生病了誰照顧——這些事遲早會發生。差別只在於，是在還能好好講話的時候講，還是在最累的時候吵。"),
+    h("p",{class:"lede"},"這份手冊一人填一份。先各自寫完，匯出檔案交換，再把對方那一份匯進來比對。建議分四個晚上，一次九十分鐘就好。"),
+    ...rules.map(([t,d,cls])=>h("div",{class:"block rulecard "+cls},h("h3",{},t),h("p",{class:"hint"},d)))
+  ];
+}
+
+function panelQuiz(){
+  const out = [h("p",{class:"lede"},"十二道題，只寫你自己的答案，先不要跟對方對答案。能寫數字就寫數字，寫「看情況」等於沒寫。每題標一個記號：紅線是我讓不了，可以談是我有偏好但能換，都可以是真的沒意見。")];
+  QUESTIONS.forEach((q,i)=>{
+    const n = i+1, d = blankQ(n);
+    out.push(h("div",{class:"q"},
+      h("div",{class:"qhead"},
+        h("span",{class:"qnum"}, String(n).padStart(2,"0")),
+        h("div",{},h("div",{class:"qtext"},q[0]),h("div",{class:"qfmt"},q[1]))
+      ),
+      h("div",{class:"qbody"},
+        field(d.ans,"寫下你的答案",v=>d.ans=v),
+        markRow(()=>d.mark, v=>d.mark=v)
+      )
+    ));
+  });
+  return out;
+}
+
+function panelCompare(){
+  if(!peer || !peer.q || !Object.keys(peer.q).length){
+    return [h("p",{class:"empty"},"還沒有讀進對方那一份。兩個人各自寫完之後，請對方按「匯出我的答案」把檔案傳給你，你在上面按「匯入檔案」選那個檔，這裡就會把兩邊的答案排出來。")];
+  }
+  const rows = [];
+  QUESTIONS.forEach((q,i)=>{
+    const n=i+1, mine=blankQ(n), theirs=peer.q["q"+n]||{ans:"",mark:""};
+    if(!mine.ans && !theirs.ans) return;
+    rows.push([n,q,mine,theirs]);
+  });
+  if(!rows.length) return [h("p",{class:"empty"},"兩邊都還沒有填任何答案。")];
+
+  const both = rows.filter(r=>r[2].mark==="紅線"&&r[3].mark==="紅線");
+  const one  = rows.filter(r=>(r[2].mark==="紅線")!==(r[3].mark==="紅線"));
+  const rest = rows.filter(r=>r[2].mark!=="紅線"&&r[3].mark!=="紅線");
+
+  const out = [h("p",{class:"lede"},"現在比對的是你和 "+peerName()+" 的答案。先看兩邊都標紅線的，那是走不走得下去的問題；再看一方紅線的，那是要不要讓的問題；剩下的慢慢磨就好。")];
+  if(peer.savedAt) out.push(h("p",{class:"stat"}, peerName()+" 那一份存檔時間："+String(peer.savedAt).slice(0,16).replace("T"," ")));
+
+  const section = (label, arr, flagged)=>{
+    if(!arr.length) return;
+    out.push(h("p",{class:"stat"}, label+"　"+arr.length+" 題"));
+    arr.forEach(([n,q,mine,theirs])=>{
+      out.push(h("div",{class:"cmp"+(flagged?" flag":"")},
+        h("div",{class:"cmpq"}, String(n).padStart(2,"0")+"　"+q[0]),
+        h("span",{class:"chip"+(flagged?" flag":"")}, (mine.mark||"未標記")+" ／ "+(theirs.mark||"未標記")),
+        h("div",{class:"ans"},
+          h("div",{}, h("div",{class:"who"},h("span",{class:"dot"}),myName()), mine.ans||"（未填）"),
+          h("div",{}, h("div",{class:"who"},h("span",{class:"dot b"}),peerName()), theirs.ans||"（未填）")
+        )
+      ));
+    });
+  };
+  section("兩邊都是紅線，優先處理", both, true);
+  section("一方的紅線，需要談", one, false);
+  section("可以慢慢磨", rest, false);
+  out.push(h("p",{class:"note"},"如果兩邊都是紅線又談不攏：同一題卡住兩次就休息，各自寫下最低可接受的條件與理由；還是不行，找家事律師或諮商師，不要找雙方爸媽。真的走不到一起，現在知道，好過婚後十年才知道。"));
+  return out;
+}
+
+function panelTopics(key){
+  const out = [h("p",{class:"lede"},"一題一題談，談完勾起來，旁邊寫下你們的結論。匯入對方的檔案之後，他寫的結論也會顯示在下面。")];
+  TOPICS[key].forEach(([t,hint],i)=>{
+    const k = key+"-"+i, d = blankT(k);
+    const pt = peer && peer.topics && peer.topics[k];
+    out.push(h("div",{class:"topic"+(d.done?" done":"")},
+      h("div",{class:"trow"},
+        h("button",{class:"tcheck",type:"button","aria-pressed":String(!!d.done),"aria-label":"標記為談過了："+t,
+          onclick:()=>{ d.done=!d.done; save(); render(); }},"✓"),
+        h("div",{}, h("h3",{},t), h("p",{class:"hint"},hint))
+      ),
+      h("div",{class:"notewrap"}, field(d.note,"我們的結論是……",v=>d.note=v)),
+      (pt && pt.note) ? h("div",{class:"peernote"}, peerName()+" 寫的：" + pt.note) : null
+    ));
+  });
+  return out;
+}
+
+function panelLegal(){
+  const out = panelTopics("legal");
+  out.splice(0,1,h("p",{class:"lede"},"這四樣是實際要去辦的。談好卻沒辦，法律上等於沒發生。"));
+  out.push(h("h3",{style:"margin-top:34px;font-size:19px"},"哪些真的有效力，哪些只是我們的約定"));
+  out.push(h("div",{class:"tablewrap"}, h("table",{},
+    h("tr",{},h("th",{},"談好的事"),h("th",{},"法律效力"),h("th",{},"要做什麼")),
+    ...BINDING.map(([a,b,c,cls])=>h("tr",{},h("td",{},a),h("td",{class:cls},b),h("td",{},c)))
+  )));
+  out.push(h("p",{class:"note"},"「沒有法律效力」不代表不重要，只是它靠的是兩個人的信用，不是法院。"));
+  return out;
+}
+
+function panelChecks(){
+  const out = [h("p",{class:"lede"},"兩個人一起去申請、一起看，不要一方查、一方被查。重點不是查到什麼，是對方有沒有先說。")];
+  const box = h("div",{class:"checks"});
+  CHECKS.forEach(row=>{
+    if(row[0]==="g"){ box.appendChild(h("div",{class:"groupcap"},row[1])); return; }
+    const [id,label,sub] = row, on = !!state.checks[id];
+    box.appendChild(h("label",{class:"chk"},
+      h("button",{class:"tcheck",type:"button","aria-pressed":String(on),"aria-label":label,
+        onclick:()=>{ state.checks[id]=!on; save(); render(); }},"✓"),
+      h("span",{},label, sub?h("small",{},sub):null)
+    ));
+  });
+  out.push(box);
+  out.push(h("p",{class:"note"},"如果查到的事是對方主動先說的，那是一個可以一起處理的問題。如果是你自己查到的，先處理「為什麼不說」。暴力或性相關的犯罪紀錄，不必勉強自己理解，離開是合理的選擇。"));
+  return out;
+}
+
+function panelAfter(){
+  const out = [
+    h("p",{class:"lede"},"人是會變的，這很正常。約定會過期，所以要定期換新的，不是假裝它還有效。每年結婚紀念日前後看一次，只看三件事：收入結構有沒有變、家裡成員有沒有變、去年說好的有沒有真的做到。"),
+    h("div",{class:"block"},h("h3",{},"這些事發生就提前談，不用等到明年"),
+      h("ul",{style:"margin:8px 0 0;padding-left:20px;color:var(--ink-soft);font-size:14.5px"},
+        ...REVIEW_TRIGGERS.map(t=>h("li",{},t)))),
+    h("p",{class:"big"},"願意花四個晚上談這些的人，本來就不是隨便要結婚的人。"),
+    h("p",{class:"lede"},"這份手冊不會讓婚姻不出事，它只是讓你們在出事的時候，知道對方原本就是怎麼想的。")
+  ];
+  out.push(h("div",{class:"pager"},
+    h("button",{class:"btn primary",type:"button",onclick:exportNotes},"匯出成一份可讀的紀錄"),
+    h("button",{class:"btn",type:"button",onclick:exportData},"匯出我的答案（檔案）")
+  ));
+  out.push(h("p",{class:"note"},"填寫的內容自動留在這台裝置的瀏覽器裡，不會上傳到任何地方。要跟對方互通，按「匯出我的答案」產生一個檔案，用任何方式傳給他，他在自己那邊按「匯入檔案」就看得到你的答案；反過來也一樣。同一個檔案也可以當備份，換手機時匯入就接回來了。"));
+    out.push(h("p",{class:"note"},"本手冊為討論架構與法條方向，不構成法律意見。具拘束力的文件（財產制契約、意定監護、遺囑、忠誠協議）請交由家事律師擬定，並完成登記或公證。"));
+  return out;
+}
+
+function exportNotes(){
+  let md = "# 婚前對話紀錄\n\n填寫人："+myName()+(peer?("　／　對照："+peerName()):"")+"\n\n## 我的答案\n\n";
+  QUESTIONS.forEach((q,i)=>{
+    const n=i+1, d=blankQ(n), t=peer&&peer.q?(peer.q["q"+n]||{}):{};
+    if(!d.ans && !t.ans) return;
+    md += "**"+n+". "+q[0]+"**\n\n- "+myName()+"："+(d.ans||"（未填）")+(d.mark?"　["+d.mark+"]":"")+"\n";
+    if(peer) md += "- "+peerName()+"："+(t.ans||"（未填）")+(t.mark?"　["+t.mark+"]":"")+"\n";
+    md += "\n";
+  });
+  for(const key of Object.keys(TOPICS)){
+    let body = "";
+    TOPICS[key].forEach(([t],i)=>{
+      const d = blankT(key+"-"+i);
+      if(!d.done && !d.note) return;
+      body += "- "+(d.done?"[已談過] ":"")+t+(d.note?"：" + d.note:"")+"\n";
+    });
+    if(body) md += "## "+TOPIC_TITLES[key]+"\n\n"+body+"\n";
+  }
+  const ticked = CHECKS.filter(r=>r[0]!=="g" && state.checks[r[0]]).map(r=>"- "+r[1]).join("\n");
+  if(ticked) md += "## 已完成的確認項目\n\n"+ticked+"\n";
+  md += "\n---\n本紀錄為討論用途，不構成法律意見。\n";
+  deliver("婚前對話紀錄-"+(safeName(state.name)||"我")+".md", md, "text/markdown");
+}
+
+/* ---------- render ---------- */
+function stepProgress(s){
+  if(s.kind==="quiz"){ return [QUESTIONS.filter((q,i)=>blankQ(i+1).ans).length, QUESTIONS.length]; }
+  if(s.kind==="topics"||s.kind==="legal"){ const k=s.key||"legal"; return [TOPICS[k].filter((t,i)=>blankT(k+"-"+i).done).length, TOPICS[k].length]; }
+  if(s.kind==="checks"){ const all=CHECKS.filter(r=>r[0]!=="g"); return [all.filter(r=>state.checks[r[0]]).length, all.length]; }
+  return null;
+}
+
+function render(){
+
+  const nf = document.getElementById("nameField");
+  if(nf && document.activeElement !== nf) nf.value = state.name || "";
+  const pi = document.getElementById("peerinfo");
+  if(pi) pi.textContent = peer ? ("已讀進 "+peer.name+" 的答案") : "";
+
+  const list = document.getElementById("steplist");
+  list.textContent = "";
+  STEPS.forEach((s,i)=>{
+    const p = stepProgress(s), complete = p && p[0]===p[1];
+    list.appendChild(h("li",{},h("button",{type:"button","aria-current":String(i===current),
+      onclick:()=>{ current=i; render(); window.scrollTo({top:0,behavior:"smooth"}); }},
+      h("span",{class:"stepno"}, String(i+1).padStart(2,"0")),
+      h("span",{}, s.nav),
+      complete?h("span",{class:"tick"},"✓"):null
+    )));
+  });
+
+  const main = document.getElementById("main");
+  main.textContent = "";
+  const s = STEPS[current];
+  const panel = h("section",{});
+  if(!storageOK) panel.appendChild(h("div",{class:"banner warnbox"},
+    h("h3",{},"這台瀏覽器不會自動保存進度"),
+    h("p",{class:"hint"},"用本機檔案開啟時，部分瀏覽器不允許存資料。填完請按「匯出我的答案」把檔案存起來，下次用「匯入檔案」接回來；關掉分頁前沒匯出，內容會消失。")
+  ));
+  const banner = pendingBanner();
+  if(banner) panel.appendChild(banner);
+  panel.appendChild(h("p",{class:"eyebrow"}, s.eyebrow ? s.eyebrow : "第 "+(current+1)+" 步，共 "+STEPS.length+" 步"));
+  panel.appendChild(h("h2",{}, s.title));
+  let body = [];
+  if(s.kind==="intro") body = panelIntro();
+  else if(s.kind==="quiz") body = panelQuiz();
+  else if(s.kind==="compare") body = panelCompare();
+  else if(s.kind==="topics") body = panelTopics(s.key);
+  else if(s.kind==="legal") body = panelLegal();
+  else if(s.kind==="checks") body = panelChecks();
+  else body = panelAfter();
+  body.forEach(n=>panel.appendChild(n));
+
+  const p = stepProgress(s);
+  panel.appendChild(h("div",{class:"pager"},
+    h("button",{class:"btn",type:"button",disabled:current===0?"":null,
+      onclick:()=>{ if(current>0){ current--; render(); window.scrollTo({top:0,behavior:"smooth"}); } }},"上一步"),
+    h("button",{class:"btn primary",type:"button",disabled:current===STEPS.length-1?"":null,
+      onclick:()=>{ if(current<STEPS.length-1){ current++; render(); window.scrollTo({top:0,behavior:"smooth"}); } }},"下一步"),
+    p?h("span",{class:"progress"}, p[0]+" / "+p[1]):null
+  ));
+  main.appendChild(panel);
+}
+
+document.getElementById("nameField").addEventListener("input", e=>{ state.name = e.target.value; save(); });
+document.getElementById("nameField").addEventListener("blur", render);
+document.getElementById("btnExport").addEventListener("click", exportData);
+document.getElementById("btnReadable").addEventListener("click", exportNotes);
+document.getElementById("btnImport").addEventListener("click", ()=>document.getElementById("fileIn").click());
+document.getElementById("fileIn").addEventListener("change", e=>{
+  importFile(e.target.files && e.target.files[0]);
+  e.target.value = "";
+});
+
+checkStorage();
+loadLocal();
+render();
+flag(storageOK ? "內容自動留在這台裝置。換裝置或要給對方看，都用匯出／匯入那兩顆按鈕。" : "這台瀏覽器不會自動保存，請用匯出／匯入來保留進度。");
+</script>
+</body>
+</html>
